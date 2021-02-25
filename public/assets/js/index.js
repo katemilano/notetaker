@@ -1,18 +1,8 @@
-const http = require('http');
-const express = require('express');
-const app = express();
-const path = require('path');
-const fs = require('fs');
-
-const PORT = process.env.POST || 3000;
-
-
 let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
-
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
@@ -21,7 +11,6 @@ if (window.location.pathname === '/notes') {
   newNoteBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
 }
-
 
 // Show an element
 const show = (elem) => {
@@ -111,7 +100,7 @@ const handleNoteView = (e) => {
   renderActiveNote();
 };
 
-// // Sets the activeNote to and empty object and allows the user to enter a new note
+// Sets the activeNote to and empty object and allows the user to enter a new note
 const handleNewNoteView = (e) => {
   activeNote = {};
   renderActiveNote();
